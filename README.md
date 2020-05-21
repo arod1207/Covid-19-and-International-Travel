@@ -12,7 +12,7 @@
 * Armando Rodriguez
     * https://github.com/arod1207
 
-## Tehchnologies: appis and css frameworks
+## Tehchnologies: APIs and CSS Frameworks
 * Foundation
     * https://get.foundation/
 * Skyscanner Flight Search
