@@ -30,7 +30,7 @@
 ### No additional setup required.
 
 # Usage
-### In this section we will show screenshot examples and expected output
+### In this section we will show screenshot examples and expected output.
 
 
 
