@@ -1,0 +1,12 @@
+/* Start of CSS File - Eguillen */
+
+#footer{
+    height: 25px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    line-height: 25px;
+    color: rgb(14, 11, 216);
+    text-align: center;
+    width: 100%;
+}
