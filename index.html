@@ -11,8 +11,11 @@
     <title>I'll Take a Corona, Hold the Corona</title>
     <!-- STYLE SHEET REFERENCE - FOUNDATION CSS FRAMEWORK------ -->
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-    <!-- CSS Stylesheet local file -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" type="text/css" href="foundation.css">
+    <!-- Insert this within your head tag and after foundation.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
+
 
 </head>
 
@@ -25,24 +28,67 @@
         <li><a href="#">FlightTracker</a></li>
         <li class="unavailable"><a href="#">Covid19</a></li>
         <li class="current"><a href="#">About Us</a></li>
+        <li class="W.H.O."><a href="https://www.who.int/">W.H.O.</a></li>
+        <li class="CDC"><a href="https://www.cdc.gov/">CDC</a></li>
     </ul>
+
+
+
+
+    <!-- ATTEMPTING TO ADD CAROUSAL FOR AESTHETICS... -->
+    <!-- <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit
+        data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+    </div>
+    <li>
+        <img src="https://media.istockphoto.com/photos/aircraft-stand-markings-airport-apron-picture-id529649523?k=6&m=529649523&s=170667a&w=0&h=vp1D1Jm6tzzoqYTCbMc0bYwQaMfuIG0z-csQDvWFenY="
+            alt="slide 1" />
+        <div class="orbit-caption">
+            Caption One.
+        </div>
+    </li>
+    <li class="active">
+        <img src="https://media.istockphoto.com/photos/aircraft-stand-markings-airport-apron-picture-id529649523?k=6&m=529649523&s=170667a&w=0&h=vp1D1Jm6tzzoqYTCbMc0bYwQaMfuIG0z-csQDvWFenY="
+            alt="slide 2" />
+        <div class="orbit-caption">
+            Caption Two.
+        </div>
+    </li>
+    <li>
+        <img src="https://media.istockphoto.com/photos/aircraft-stand-markings-airport-apron-picture-id529649523?k=6&m=529649523&s=170667a&w=0&h=vp1D1Jm6tzzoqYTCbMc0bYwQaMfuIG0z-csQDvWFenY="
+            alt="slide 3" />
+        <div class="orbit-caption">
+            Caption Three.
+        </div>
+    </li>
+    </ul> -->
 
     <div class="grid-x grid-padding-x">
         <div class="large-12 cell">
             <div class="callout">
+
+
                 <h3>Welcome</h3>
 
                 <p>As a traveler we know that safety is very important. During these extraordinary times we have a
                     created a <br>
                     website to track COVID 19 and make a informed travel decision based on current COVID 19 statistics
                 </p>
+
+
+
                 <p>To get started... All you need to do is search for a city below.</p>
                 <div class="grid-x grid-padding-x" style="height:100px">
                     <div class="large-4 medium-4 cell">
-                        <p><a href="http://foundation.zurb.com/docs">Foundation Documentation</a><br />Everything you
-                            need
-                            to know about using the framework.</p>
+                        <ul><a href="cdc.gov">US CDC</a><br />United States Center for Disease Control</ul>
                     </div>
+
+                    <ul><a
+                            href="https://health.gov.il/English/MinistryUnits/HealthDivision/Icdc/Pages/default.aspx">ICDC</a><br />Israel
+                        Center for Disease Control</ul>
+
+                    <!-- <ul><a href="https://health.gov.il/English/MinistryUnits/HealthDivision/Icdc/Pages/default.aspx">NIID</a><br />Japanese National Institue of Infectious Diseases</ul>
+                        Center for Disease Control</ul>
+ -->
 
                 </div>
                 <!-- API FLIGHT TRACKER ========================================================= -->
@@ -95,23 +141,24 @@
 
             </div>
         </div>
-        <!-- START OF COVID 19 API ==================================================================== -->
-        <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-            <div class="cell">
-                <div class="card">
-                    COVID 19 API Space?
-                </div>
-                <img src="https://scitechdaily.com/images/COVID-19-Coronavirus-Map-March-1.jpg">
-                <div class="card-section">
-                    <h4>COVID 19</h4>
-                    <p>It has an easy to override visual style, and is appropriately subdued.</p>
-                </div>
-            </div>
-            <!-- END OF COVID 19 API ======================================================================== -->
-
-        </div>
     </div>
 
+    <!-- START OF COVID 19 API ==================================================================== -->
+    <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+            <div class="callout">
+                COVID 19 API Space?
+            </div>
+            <img src="https://scitechdaily.com/images/COVID-19-Coronavirus-Map-March-1.jpg">
+            <div class="card-section">
+                <h4>COVID 19</h4>
+                <p>It has an easy to override visual style, and is appropriately subdued.</p>
+            </div>
+        </div>
+        <!-- END OF COVID 19 API ======================================================================== -->
+
+    </div>
+    </div>
 
 
 </body>
@@ -124,3 +171,19 @@
 
 
 </html>
+
+
+
+<!-- Eddie Personal Notes and Scribble Area Below -->
+
+<!-- Below is supposed to enter in background of a card to replace with image? -->
+<!-- 
+<div data-interchange="[https://www.tokkoro.com/picsup/2639580-rio-de-janeiro-4k-hd-latest-wallpaper.jpg, small], [https://www.tokkoro.com/picsup/2639580-rio-de-janeiro-4k-hd-latest-wallpaper.jpg, medium], 
+                    [https://www.tokkoro.com/picsup/2639580-rio-de-janeiro-4k-hd-latest-wallpaper.jpg, large]">
+</div> -->
+
+
+<!-- Going to figure out if I can change the background images to different INTERNATIONAL CITIES -->
+<!-- https://free4kwallpapers.com/uploads/originals/2018/06/27/london-city--wallpaper.jpg -->
+<!-- https://www.tokkoro.com/picsup/2639580-rio-de-janeiro-4k-hd-latest-wallpaper.jpg -->
+<!-- https://wallpapersdsc.net/wp-content/uploads/2016/09/Tokyo-Widescreen.jpg -->
