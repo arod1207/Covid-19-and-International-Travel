@@ -20,82 +20,99 @@
 <!-- START OF BODY =========================================== -->
 
 <body>
-
-    <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-            <div class="large-12 cell">
-                <h1>Project 1 - NAVBAR -----------------------------------------</h1>
-            </div>
-        </div>
-    </div>
+    <ul class="breadcrumbs">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">FlightTracker</a></li>
+        <li class="unavailable"><a href="#">Covid19</a></li>
+        <li class="current"><a href="#">About Us</a></li>
+    </ul>
 
     <div class="grid-x grid-padding-x">
         <div class="large-12 cell">
             <div class="callout">
                 <h3>Welcome</h3>
+
                 <p>As a traveler we know that safety is very important. During these extraordinary times we have a
                     created a <br>
                     website to track COVID 19 and make a informed travel decision based on current COVID 19 statistics
                 </p>
                 <p>To get started... All you need to do is search for a city below.</p>
-                <div class="grid-x grid-padding-x">
+                <div class="grid-x grid-padding-x" style="height:100px">
                     <div class="large-4 medium-4 cell">
                         <p><a href="http://foundation.zurb.com/docs">Foundation Documentation</a><br />Everything you
                             need
                             to know about using the framework.</p>
                     </div>
-                    <div class="row">
-                        <div class="medium-8 columns">
-                            <p><img src="https://placehold.it/900x450&amp;text=COVID API" alt="main article image"></p>
+
+                </div>
+                <!-- API FLIGHT TRACKER ========================================================= -->
+                <form>
+                    <div class="row collapse" style="height:30px">
+                        <div class="small-3 large-2 columns">
                         </div>
-                        <div class="medium-4 columns">
-                            <p><img src="https://placehold.it/400x200&amp;text=WEATHER API or MAP"
-                                    alt="article promo image">
-                            </p>
-                            <p><img src="https://placehold.it/400x200&amp;text=FLIGHT TRACKER"
-                                    alt="article promo image"></p>
+                        <h5 style="height:20px">API Flight Tracker</h5>
+
+                    </div>
+                    <div class="row">
+                        <div class="large-6 columns">
+                            <div class="row collapse prefix-radius">
+                                <div class="small-3 columns">
+                                    <span class="FlightTrackerAPI"></span>
+                                </div>
+                                <div class="small-9 columns">
+                                    <!-- FORM FOR USER FLYING FROM===================== -->
+                                    <input type="text" placeholder="Flying From">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="large-6 columns">
+                            <div class="row collapse postfix-radius">
+                                <div class="small-9 columns">
+                                    <input type="text" placeholder="Destination">
+                                </div>
+                                <div class="small-3 columns">
+                                    <span class="postfix"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <h5>Form Below... Perhaps We don't need this but just in case</h5>
-                    <form>
-                        <div class="grid-x grid-padding-x">
-                            <div class="large-12 cell">
-                                <label>Input Label</label>
-                                <input type="text" placeholder="large-12.cell" />
+                    <div class="row">
+                        <div class="large-6 columns">
+                            <div class="row collapse prefix-round">
+                                <div class="small-3 columns">
+                                </div>
                             </div>
-                        </div>
-                        <div class="grid-x grid-padding-x">
-                            <div class="large-4 medium-4 cell">
-                                <label>Input Label</label>
-                                <input type="text" placeholder="large-4.cell" />
-                            </div>
-                            <div class="large-4 medium-4 cell">
-                                <label>Input Label</label>
-                                <input type="text" placeholder="large-4.cell" />
-                            </div>
+                            <div class="large-6 columns">
+                                <a href="#" class="button postfix">Submit</a>
+                                <div class="row collapse postfix-round">
 
-                        </div>
-                        <div class="grid-x grid-padding-x">
-                            <div class="large-12 cell">
-                                <label>Select Box</label>
-                                <select>
-                                    <option value="husker">Husker</option>
-                                    <option value="starbuck">Starbuck</option>
-                                    <option value="hotdog">Hot Dog</option>
-                                    <option value="apollo">Apollo</option>
-                                </select>
+                                </div>
                             </div>
                         </div>
-                </div>
+                    </div>
+                </form>
+                <!-- END OF FLIGHT TRACKER API =============================================== -->
+
             </div>
         </div>
+        <!-- START OF COVID 19 API ==================================================================== -->
+        <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+            <div class="cell">
+                <div class="card">
+                    COVID 19 API Space?
+                </div>
+                <img src="https://scitechdaily.com/images/COVID-19-Coronavirus-Map-March-1.jpg">
+                <div class="card-section">
+                    <h4>COVID 19</h4>
+                    <p>It has an easy to override visual style, and is appropriately subdued.</p>
+                </div>
+            </div>
+            <!-- END OF COVID 19 API ======================================================================== -->
 
-    </div>
+        </div>
     </div>
 
-    <div id="footer">
-        <h5> ------ FOOTER ------- </h5>
-    </div>
+
 
 </body>
 
