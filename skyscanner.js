@@ -1,17 +1,24 @@
-var query = "Dallas" // user input
-var country = "us"; // default for simplicity right now
+var country = "US"; // default for simplicity right now
 var locale = "en-US"; // default for simplicity right now
-var currency = "usd"; // default for simplicity right now
-var flightOutBoundDate = "2020-05-26"; // user input
-var flightInBoundDate = "2020-06-02"; // user input
-var origin = "SATA-sky" // user input
-var destination = "DFWA-sky" // user input
+var currency = "USD"; // default for simplicity right now
 
 
+
+
+$('.submitBtn').on("click",function(e){
+    e.preventDefault();
+
+    var origin = $('#origin').val();
+    var destination = $('#destination').val();
+    var departurDate = $('#depart').val()
+    var returnDate = $('#return').val();
+
+
+// AJAX call to get origin PlaceID //
 var settings = {
 	"async": true,
 	"crossDomain": true,
-	"url": `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/${country}/${currency}/en-US/?query=${query}`,
+	"url": `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/${country}/${currency}/en-US/?query=${origin}`,
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
@@ -19,30 +26,47 @@ var settings = {
 	}
 }
 
-$.ajax(settings).done(function (response) {
+$.ajax(settings).done(function (responsePlaceID) {
+    var originID = responsePlaceID.Places[0].PlaceId
+    console.log(originID);
+// AJAX call to get destinationID
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/${country}/${currency}/en-US/?query=${destination}`,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+            "x-rapidapi-key": "0b8bdf6765msh3a834de431554e9p1feb19jsn74c4481a7c10"
+        }
+    }
+    
+    $.ajax(settings).done(function (responsePlaceID) {
+        var destinationID = responsePlaceID.Places[0].PlaceId
+        console.log(destinationID);   
 
-	for (var i = 0; i < response.Places[0].PlaceName.length; i ++)
-	console.log(response.Places[i]);
-	
+// AJAX call to get Quotes //
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/${country}/${currency}/${locale}/${originID}/${destinationID}/${departurDate}/?inboundpartialdate=${returnDate}`,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+            "x-rapidapi-key": "0b8bdf6765msh3a834de431554e9p1feb19jsn74c4481a7c10"
+        }
+    }
+    
+    
+    $.ajax(settings).done(function (response) {
+        console.log(response);
 
+        for (i = 0; i < response.Carriers.CarrierId.length; i++){
+            console.log(i)
+        }
+    });
+   
 });
 
-
-var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/${country}/${currency}/${locale}/${origin}/${destination}/${flightOutBoundDate}?inboundpartialdate=${flightOutBoundDate}`,
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
-		"x-rapidapi-key": "0b8bdf6765msh3a834de431554e9p1feb19jsn74c4481a7c10"
-	}
-}
-
-$.ajax(settings).done(function (response) {
-	console.log(response);
+})
 });
-
-
-
-
