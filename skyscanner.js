@@ -61,9 +61,31 @@ $.ajax(settings).done(function (responsePlaceID) {
     $.ajax(settings).done(function (response) {
         console.log(response);
 
-        for (i = 0; i < response.Carriers.CarrierId.length; i++){
-            console.log(i)
-        }
+    // var airline = response.Quotes[0].OutboundLeg.CarrierIds
+    var airline = response.Quotes.length;
+    for (var i = 0; i < airline; i++) {
+        var airlineID = response.Quotes[i].OutboundLeg.CarrierIds;
+       console.log(airlineID);
+    }
+
+
+
+// Price Range //
+     var quotes = response.Quotes.length;
+     for (var i = 0; i < quotes; i++){
+         var prices = response.Quotes[i].MinPrice;
+         var priceLi = $("<li>")
+         $('#flight-details').append(priceLi);
+         priceLi.text(`Prices range from ${prices}`);
+         
+     }
+
+     
+
+
+       
+
+       
     });
    
 });
