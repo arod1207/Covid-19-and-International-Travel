@@ -62,7 +62,7 @@
     </li>
     </ul> -->
 
-    <div class="grid-x grid-padding-x">
+    <div class="grid-x grid-padding-x" style="height 100px">
         <div class="large-12 cell">
             <div class="callout">
 
@@ -86,12 +86,20 @@
                             href="https://health.gov.il/English/MinistryUnits/HealthDivision/Icdc/Pages/default.aspx">ICDC</a><br />Israel
                         Center for Disease Control</ul>
 
-                    <!-- <ul><a href="https://health.gov.il/English/MinistryUnits/HealthDivision/Icdc/Pages/default.aspx">NIID</a><br />Japanese National Institue of Infectious Diseases</ul>
-                        Center for Disease Control</ul>
- -->
+                    <!-- <!-- <ul><a href="https://health.gov.il/English/MinistryUnits/HealthDivision/Icdc/Pages/default.aspx">NIID</a><br />Japanese National Institue of Infectious Diseases</ul>
+                        Center for Disease Control</ul>  -->
 
-                </div>
+
+
+                        </div>
+                        </div>
+                        
                 <!-- API FLIGHT TRACKER ========================================================= -->
+                    <div class="grid-x grid-padding-x" style="height 100px">
+                        <div class="large-12 cell">
+                            <div class="callout">
+
+
                 <form>
                     <div class="row collapse" style="height:30px">
                         <div class="small-3 large-2 columns">
@@ -107,15 +115,21 @@
                                 </div>
                                 <div class="small-9 columns">
                                     <!-- FORM FOR USER FLYING FROM===================== -->
-                                    <input type="text" placeholder="Flying From">
+                                    <input type="text" placeholder="Flying From" id="origin">
                                 </div>
                             </div>
                         </div>
                         <div class="large-6 columns">
                             <div class="row collapse postfix-radius">
                                 <div class="small-9 columns">
-                                    <input type="text" placeholder="Destination">
+                                    <input type="text" placeholder="Destination" id="destination">
                                 </div>
+
+                            <div class="large-3 columns">
+                                <a href="#" class="button postfix">Submit</a>
+                                <div class="row collapse postfix-round">
+                                </div>
+
                                 <div class="small-3 columns">
                                     <span class="postfix"></span>
                                 </div>
@@ -123,28 +137,43 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="large-6 columns">
-                            <div class="row collapse prefix-round">
-                                <div class="small-3 columns">
-                                </div>
-                            </div>
-                            <div class="large-6 columns">
-                                <a href="#" class="button postfix">Submit</a>
-                                <div class="row collapse postfix-round">
+
+                        <label for=“DepartureDate”>Depart:</label>
+                        <input type=“date” id=“depart” name=“depart”>
+
+                        <label for=“ReturnDate”>Return:</label>
+                        <input type=“date” id=“return” name=“return”>
+
+
+
 
                                 </div>
                             </div>
                         </div>
                     </div>
                 </form>
+
+                <div class="row" style="height:40px">
+                    <div class="small-6 columns">Result 1</div>
+                    <div class="small-6 columns">DATA?</div>
+                </div>
+                <div class="row">
+                    <div class="medium-6 large-4 columns">Lorem</div>
+                    <div class="medium-6 large-8 columns">Lorem</div>
+                </div>
+
+
                 <!-- END OF FLIGHT TRACKER API =============================================== -->
 
             </div>
         </div>
     </div>
+<br>
+<br>
+<br>
 
     <!-- START OF COVID 19 API ==================================================================== -->
-    <div class="grid-x grid-padding-x">
+    <div class="grid-x grid-padding-x" style="height:40px" >
         <div class="large-12 cell">
             <div class="callout">
                 COVID 19 API Space?
