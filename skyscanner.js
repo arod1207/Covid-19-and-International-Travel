@@ -2,6 +2,9 @@ var country = "US"; // default for simplicity right now
 var locale = "en-US"; // default for simplicity right now
 var currency = "USD"; // default for simplicity right now
 
+
+
+
 $(".submitBtn").on("click", function (e) {
   e.preventDefault();
 
@@ -67,6 +70,7 @@ $(".submitBtn").on("click", function (e) {
           var airlineID = response.Quotes[i].OutboundLeg.CarrierIds;
           var prices = response.Quotes[i].MinPrice;
           var directFlight = response.Quotes[i].Direct;
+          window.CountryCode = response.Places[0].CountryName;
           console.log(airlineID, prices, directFlight);
           var airlineLi = $("<li>");
           var priceLi = $("<li>");
@@ -74,6 +78,8 @@ $(".submitBtn").on("click", function (e) {
           $("#flight-details").append(airlineLi);
           $("#flight-details").append(priceLi);
           $("#flight-details").append(directFlightLi);
+
+          console.log(CountryCode)
 
           // if else statments to Display Airline name instead of Number //
           if (airlineID == "1065"){
@@ -127,6 +133,15 @@ $(".submitBtn").on("click", function (e) {
           else if (airlineID == "1878"){
             airlineLi.text('Airline: Wizz Air')
           }
+          else if (airlineID == "1464"){
+            airlineLi.text('ANA')
+          }
+          else if (airlineID == "1902"){
+            airlineLi.text('Southwest Airlines')
+          }
+          else if (airlineID == "1368"){
+            airlineLi.text('Lufthansa')
+          }
 
           priceLi.text(`Prices: $${prices}`);
 
@@ -134,8 +149,6 @@ $(".submitBtn").on("click", function (e) {
             directFlightLi.text(`Direct Flight: Non-stop`);
           } else 
           directFlightLi.text(`Direct Flight: Not a Direct Flight`);
-          
-        
           
         }
       });
