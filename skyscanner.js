@@ -1,7 +1,6 @@
 var country = "US"; // default for simplicity right now
 var locale = "en-US"; // default for simplicity right now
 var currency = "USD"; // default for simplicity right now
-console.log(CountryCode);
 
 
 
@@ -72,7 +71,10 @@ $(".submitBtn").on("click", function (e) {
           var airlineID = response.Quotes[i].OutboundLeg.CarrierIds;
           var prices = response.Quotes[i].MinPrice;
           var directFlight = response.Quotes[i].Direct;
-          window.CountryCode = response.Places[0].CountryName;
+          var CountryCode = response.Places[0].CountryName;
+          // save in local storage //
+          localStorage.setItem('CountryCode', CountryCode);
+
           console.log(airlineID, prices, directFlight);
           var airlineLi = $("<li>");
           var priceLi = $("<li>");
