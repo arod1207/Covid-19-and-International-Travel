@@ -1,5 +1,5 @@
 //variables
-
+var destination = ""
 
 //event listener for submit button
 $('.submitBtn').on("click",function(e){
