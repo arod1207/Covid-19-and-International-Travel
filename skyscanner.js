@@ -62,7 +62,6 @@ $(".submitBtn").on("click", function (e) {
         
         $('#flight-details').append(`${origin} to ${destination}`);
         
-    // flight data dynamically generated //
         var flightData = response.Quotes.length;
         for (var i = 0; i < flightData; i++) {
           var airlineID = response.Quotes[i].OutboundLeg.CarrierIds;
@@ -75,9 +74,69 @@ $(".submitBtn").on("click", function (e) {
           $("#flight-details").append(airlineLi);
           $("#flight-details").append(priceLi);
           $("#flight-details").append(directFlightLi);
-          airlineLi.text(`Airline: ${airlineID}`);
+
+          // if else statments to Display Airline name instead of Number //
+          if (airlineID == "1065"){
+            airlineLi.text(`Airline: Frontier Air`);
+          }
+          else if (airlineID == "881"){
+            airlineLi.text('Airline: British Airway')
+          }
+          else if (airlineID == "1108"){
+            airlineLi.text('Airline: Allegiant Air')
+          }
+          else if (airlineID == "838"){
+            airlineLi.text('Airline: Air France')
+          }
+          else if (airlineID == "1361"){
+            airlineLi.text('Airline: LATAM Airlines Group')
+          }
+          else if (airlineID == "1467"){
+            airlineLi.text('Airline: Spirit Airline')
+          }
+          else if (airlineID == "1793"){
+            airlineLi.text('Airline: United Airline')
+          }
+          else if (airlineID == "210"){
+            airlineLi.text('Airline: Boutique Air')
+          }
+          else if (airlineID == "1126"){
+            airlineLi.text('Airline: Gulf Air')
+          }
+          else if (airlineID == "1218"){
+            airlineLi.text('Airline: Iberia Air')
+          }
+          else if (airlineID == "1606"){
+            airlineLi.text('Airline: Quatar Air')
+          }
+          else if (airlineID == "1530"){
+            airlineLi.text('Airline: Asiana Airlines')
+          }
+          else if (airlineID == "952"){
+            airlineLi.text('Airline: Cathay Pacific')
+          }
+          else if (airlineID == "1317"){
+            airlineLi.text('Airline: Korean Air')
+          }
+          else if (airlineID == "1324"){
+            airlineLi.text('Airline: KLM')
+          }
+          else if (airlineID == "1755"){
+            airlineLi.text('Airline: Turkish Airlines')
+          }
+          else if (airlineID == "1878"){
+            airlineLi.text('Airline: Wizz Air')
+          }
+
           priceLi.text(`Prices: $${prices}`);
-          directFlightLi.text(`Direct Flight: ${directFlight}`);
+
+          if (directFlight == "true"){
+            directFlightLi.text(`Direct Flight: Non-stop`);
+          } else 
+          directFlightLi.text(`Direct Flight: Not a Direct Flight`);
+          
+        
+          
         }
       });
     });
