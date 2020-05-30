@@ -1,12 +1,14 @@
 var country = "US"; // default for simplicity right now
 var locale = "en-US"; // default for simplicity right now
 var currency = "USD"; // default for simplicity right now
-
+console.log(CountryCode);
 
 
 
 $(".submitBtn").on("click", function (e) {
   e.preventDefault();
+
+  $('#flight-details').text(" ");
 
   var origin = $("#origin").val();
   var destination = $("#destination").val();
@@ -134,14 +136,15 @@ $(".submitBtn").on("click", function (e) {
             airlineLi.text('Airline: Wizz Air')
           }
           else if (airlineID == "1464"){
-            airlineLi.text('ANA')
+            airlineLi.text('Airline: ANA')
           }
           else if (airlineID == "1902"){
-            airlineLi.text('Southwest Airlines')
+            airlineLi.text('Airline: Southwest Airlines')
           }
           else if (airlineID == "1368"){
-            airlineLi.text('Lufthansa')
+            airlineLi.text('Airline: Lufthansa')
           }
+          else (airlineLi.text(`Airline: ${airlineID}`));
 
           priceLi.text(`Prices: $${prices}`);
 
