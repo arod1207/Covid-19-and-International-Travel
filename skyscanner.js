@@ -74,7 +74,9 @@ $(".submitBtn").on("click", function (e) {
           var airlineLi = $("<li>");
           var priceLi = $("<li>");
           var directFlightLi = $("<li>");
-          var noFlightData = $("<li>");
+		  var noFlightData = $("<li>");
+		  
+		  covidCountry(CountryCode)
 
             // working to display if flight data if not available //
           // if (flightData == 0) {
