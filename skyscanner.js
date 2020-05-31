@@ -2,11 +2,10 @@ var country = "US"; // default for simplicity right now
 var locale = "en-US"; // default for simplicity right now
 var currency = "USD"; // default for simplicity right now
 
-
-
-
 $(".submitBtn").on("click", function (e) {
   e.preventDefault();
+
+  $('#flight-details').text(" ");
 
   var origin = $("#origin").val();
   var destination = $("#destination").val();
@@ -70,11 +69,21 @@ $(".submitBtn").on("click", function (e) {
           var airlineID = response.Quotes[i].OutboundLeg.CarrierIds;
           var prices = response.Quotes[i].MinPrice;
           var directFlight = response.Quotes[i].Direct;
-          window.CountryCode = response.Places[0].CountryName;
+          var CountryCode = response.Places[0].CountryName;
           console.log(airlineID, prices, directFlight);
           var airlineLi = $("<li>");
           var priceLi = $("<li>");
           var directFlightLi = $("<li>");
+		  var noFlightData = $("<li>");
+		  
+		  covidCountry(CountryCode)
+
+            // working to display if flight data if not available //
+          // if (flightData == 0) {
+          //   return true;
+          //   $("#flight-details").append(noFlightData);
+          //   noFlightData.text("No flight data available");
+          // }
           $("#flight-details").append(airlineLi);
           $("#flight-details").append(priceLi);
           $("#flight-details").append(directFlightLi);
@@ -134,14 +143,15 @@ $(".submitBtn").on("click", function (e) {
             airlineLi.text('Airline: Wizz Air')
           }
           else if (airlineID == "1464"){
-            airlineLi.text('ANA')
+            airlineLi.text('Airline: ANA')
           }
           else if (airlineID == "1902"){
-            airlineLi.text('Southwest Airlines')
+            airlineLi.text('Airline: Southwest Airlines')
           }
           else if (airlineID == "1368"){
-            airlineLi.text('Lufthansa')
+            airlineLi.text('Airline: Lufthansa')
           }
+          else (airlineLi.text(`Airline: ${airlineID}`));
 
           priceLi.text(`Prices: $${prices}`);
 
