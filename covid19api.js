@@ -17,4 +17,4 @@ $('.submitBtn').on("click",function(e){
 
 }; 
 
-covidCountry("Mexico")
+covidCountry()
