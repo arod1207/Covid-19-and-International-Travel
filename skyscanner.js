@@ -2,8 +2,6 @@ var country = "US"; // default for simplicity right now
 var locale = "en-US"; // default for simplicity right now
 var currency = "USD"; // default for simplicity right now
 
-
-
 $(".submitBtn").on("click", function (e) {
   e.preventDefault();
 
@@ -72,13 +70,18 @@ $(".submitBtn").on("click", function (e) {
           var prices = response.Quotes[i].MinPrice;
           var directFlight = response.Quotes[i].Direct;
           var CountryCode = response.Places[0].CountryName;
-          // save in local storage //
-          localStorage.setItem('CountryCode', CountryCode);
-
           console.log(airlineID, prices, directFlight);
           var airlineLi = $("<li>");
           var priceLi = $("<li>");
           var directFlightLi = $("<li>");
+          var noFlightData = $("<li>");
+
+            // working to display if flight data if not available //
+          // if (flightData == 0) {
+          //   return true;
+          //   $("#flight-details").append(noFlightData);
+          //   noFlightData.text("No flight data available");
+          // }
           $("#flight-details").append(airlineLi);
           $("#flight-details").append(priceLi);
           $("#flight-details").append(directFlightLi);
