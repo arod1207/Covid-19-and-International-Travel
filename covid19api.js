@@ -18,3 +18,4 @@ $('.submitBtn').on("click",function(e){
 }; 
 
 covidCountry()
+console.log("settings")
