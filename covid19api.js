@@ -16,11 +16,10 @@ var settings = {
   $.ajax(settings).done(function (response) {
     console.log(response);
   });
+  //function dozachstuff (countryCode) = $.ajax(url, countryCode)
 
 
 
-
-  
 
 
 });
