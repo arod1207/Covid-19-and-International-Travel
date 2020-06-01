@@ -66,6 +66,17 @@ $(".submitBtn").on("click", function (e) {
         console.log(response);
         
         $('#flight-details').append(`${origin} to ${destination}`);
+       
+      
+        // IS FLIGHT INFORMATION AVAILABLE //
+        var goNoGo = response.Quotes.length
+        if (goNoGo > 0){
+          console.log("flight data")
+        } else if (goNoGo === 0){
+          $('#flight-details').append(`NO FLIGHT DATA AVAILABLE`)
+        }
+
+        console.log(goNoGo)
         
         var flightData = response.Quotes.length;
         for (var i = 0; i < flightData; i++) {
@@ -73,21 +84,27 @@ $(".submitBtn").on("click", function (e) {
           var prices = response.Quotes[i].MinPrice;
           var directFlight = response.Quotes[i].Direct;
           var CountryCode = response.Places[0].CountryName;
+
           console.log(airlineID, prices, directFlight);
+
+         
+          
+       
           var airlineLi = $("<li>");
           var priceLi = $("<li>");
           var directFlightLi = $("<li>");
-      var noFlightData = $("<li>");
+          
       
-      console.log(flightData)
+    
       
       getLonLat(destination)
 
 		  covidCountry(CountryCode)
 
             // working to display if flight data if not available //
-     
-
+          
+        
+          
           $("#flight-details").append(airlineLi);
           $("#flight-details").append(priceLi);
           $("#flight-details").append(directFlightLi);
