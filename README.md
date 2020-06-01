@@ -17,12 +17,14 @@
     * https://get.foundation/
 * Skyscanner Flight Search
     * https://rapidapi.com/skyscanner/api/skyscanner-flight-search
-* Coronavirus monitor
-    * https://rapidapi.com/astsiatsko/api/coronavirus-monitor-v2
+* Covid 19 API
+    * https://covid19api.com/
 * jQuery
     * https://jquery.com/
-* Moments.js
-    * https://momentjs.com/
+* Leafletjs
+    * https://leafletjs.com/
+* OpenCage Geocoding
+    * https://opencagedata.com/
 * CSS Stylings
 
 ## Installation
