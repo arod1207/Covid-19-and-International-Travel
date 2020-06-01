@@ -28,6 +28,7 @@ $(".submitBtn").on("click", function (e) {
   $.ajax(settings).done(function (responsePlaceID) {
     var originID = responsePlaceID.Places[0].PlaceId;
     console.log(originID);
+    console.log(responsePlaceID)
     // AJAX call to get destinationID
     var settings = {
       async: true,
@@ -75,7 +76,9 @@ $(".submitBtn").on("click", function (e) {
           var priceLi = $("<li>");
           var directFlightLi = $("<li>");
 		  var noFlightData = $("<li>");
-		  
+      
+      getLonLat(destination)
+
 		  covidCountry(CountryCode)
 
             // working to display if flight data if not available //
@@ -165,3 +168,28 @@ $(".submitBtn").on("click", function (e) {
     });
   });
 });
+
+
+function getLonLat(destination){
+$.ajax(
+  {url: `https://api.opencagedata.com/geocode/v1/json?q=${destination}&key=27cb56ad5c784b38b713068f493bb1b0`,
+   method: 'GET'})
+.then(function(response){
+  console.log(response) 
+
+  var lat = response.results[0].geometry.lat
+  var lon = response.results[0].geometry.lng
+  
+  var mymap = L.map('mapid').setView([lat, lon], 5);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiYXJvZDEyMDciLCJhIjoiY2thdnB0ZzAxMWlkOTJ4cGN5NDJxeWtqcSJ9.sQsygMwVtngG59Cz3GYbuA'
+}).addTo(mymap);
+})
+
+}
