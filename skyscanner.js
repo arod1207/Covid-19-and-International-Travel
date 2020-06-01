@@ -65,15 +65,14 @@ $(".submitBtn").on("click", function (e) {
       $.ajax(settings).done(function (response) {
         console.log(response);
         
-        $('#flight-details').append(`${origin} to ${destination}`);
-       
-      
         // IS FLIGHT INFORMATION AVAILABLE //
         var goNoGo = response.Quotes.length
         if (goNoGo > 0){
-          console.log("flight data")
+          $('#flight-details').append(`${origin} to ${destination}`);
+          
         } else if (goNoGo === 0){
           $('#flight-details').append(`NO FLIGHT DATA AVAILABLE`)
+          covidCountry(CountryCode)
         }
 
         console.log(goNoGo)
@@ -84,28 +83,25 @@ $(".submitBtn").on("click", function (e) {
           var prices = response.Quotes[i].MinPrice;
           var directFlight = response.Quotes[i].Direct;
           var CountryCode = response.Places[0].CountryName;
+          var destinationAirport = response.Places[1].Name;
+          var originAirport = response.Places[0].Name;
 
           console.log(airlineID, prices, directFlight);
 
-         
-          
-       
           var airlineLi = $("<li>");
+          var originAirportLi = $("<li>");
+          var destinationAirportLi = $("<li>");
           var priceLi = $("<li>");
           var directFlightLi = $("<li>");
-          
-      
-    
-      
+                
       getLonLat(destination)
 
 		  covidCountry(CountryCode)
 
-            // working to display if flight data if not available //
-          
-        
-          
+                    
           $("#flight-details").append(airlineLi);
+          $("#flight-details").append(originAirportLi);
+          $("#flight-details").append(destinationAirportLi);
           $("#flight-details").append(priceLi);
           $("#flight-details").append(directFlightLi);
 
@@ -174,6 +170,11 @@ $(".submitBtn").on("click", function (e) {
           }
           else (airlineLi.text(`Airline: ${airlineID}`));
 
+          // airports //
+          originAirportLi.text(`Departing From: ${originAirport}`)
+          destinationAirportLi.text(`Arriving At: ${destinationAirport}`)
+
+          // price //
           priceLi.text(`Prices: $${prices}`);
 
           if (directFlight == "true"){
