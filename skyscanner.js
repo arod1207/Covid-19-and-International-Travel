@@ -7,6 +7,8 @@ $(".submitBtn").on("click", function (e) {
 
   $('#flight-details').text(" ");
 
+ 
+
   var origin = $("#origin").val();
   var destination = $("#destination").val();
   var departurDate = $("#depart").val();
@@ -64,6 +66,17 @@ $(".submitBtn").on("click", function (e) {
         console.log(response);
         
         $('#flight-details').append(`${origin} to ${destination}`);
+       
+      
+        // IS FLIGHT INFORMATION AVAILABLE //
+        var goNoGo = response.Quotes.length
+        if (goNoGo > 0){
+          console.log("flight data")
+        } else if (goNoGo === 0){
+          $('#flight-details').append(`NO FLIGHT DATA AVAILABLE`)
+        }
+
+        console.log(goNoGo)
         
         var flightData = response.Quotes.length;
         for (var i = 0; i < flightData; i++) {
@@ -71,22 +84,27 @@ $(".submitBtn").on("click", function (e) {
           var prices = response.Quotes[i].MinPrice;
           var directFlight = response.Quotes[i].Direct;
           var CountryCode = response.Places[0].CountryName;
+
           console.log(airlineID, prices, directFlight);
+
+         
+          
+       
           var airlineLi = $("<li>");
           var priceLi = $("<li>");
           var directFlightLi = $("<li>");
-		  var noFlightData = $("<li>");
+          
+      
+    
       
       getLonLat(destination)
 
 		  covidCountry(CountryCode)
 
             // working to display if flight data if not available //
-          // if (flightData == 0) {
-          //   return true;
-          //   $("#flight-details").append(noFlightData);
-          //   noFlightData.text("No flight data available");
-          // }
+          
+        
+          
           $("#flight-details").append(airlineLi);
           $("#flight-details").append(priceLi);
           $("#flight-details").append(directFlightLi);
@@ -180,7 +198,7 @@ $.ajax(
   var lat = response.results[0].geometry.lat
   var lon = response.results[0].geometry.lng
   
-  var mymap = L.map('mapid').setView([lat, lon], 5);
+  var mymap = L.map('mapid').setView([lat, lon], 7);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -193,3 +211,4 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 })
 
 }
+
