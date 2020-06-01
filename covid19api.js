@@ -4,7 +4,7 @@ var settings = {
     "url": `https://api.covid19api.com/live/country/${countryCode}`,
     "method": "GET",
     "timeout": 0,
-};
+  };
   
   $.ajax(settings).done(function (response) {
     console.log(response);
@@ -16,6 +16,6 @@ $('.submitBtn').on("click",function(e){
 })
 
 }; 
+covidCountry();
 
-covidCountry()
-console.log("settings")
+//new li to append data to flight details
