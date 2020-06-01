@@ -77,18 +77,17 @@ $(".submitBtn").on("click", function (e) {
           var airlineLi = $("<li>");
           var priceLi = $("<li>");
           var directFlightLi = $("<li>");
-		  var noFlightData = $("<li>");
+      var noFlightData = $("<li>");
+      
+      console.log(flightData)
       
       getLonLat(destination)
 
 		  covidCountry(CountryCode)
 
             // working to display if flight data if not available //
-          // if (flightData == 0) {
-          //   return true;
-          //   $("#flight-details").append(noFlightData);
-          //   noFlightData.text("No flight data available");
-          // }
+     
+
           $("#flight-details").append(airlineLi);
           $("#flight-details").append(priceLi);
           $("#flight-details").append(directFlightLi);
