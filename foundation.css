@@ -77,6 +77,8 @@
   margin-top: -0.25em;
 }
 
+#mapid { height: 180px; }
+
 .double span:before {
   right: 100%;
 }
