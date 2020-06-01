@@ -7,6 +7,8 @@ $(".submitBtn").on("click", function (e) {
 
   $('#flight-details').text(" ");
 
+ 
+
   var origin = $("#origin").val();
   var destination = $("#destination").val();
   var departurDate = $("#depart").val();
@@ -180,7 +182,7 @@ $.ajax(
   var lat = response.results[0].geometry.lat
   var lon = response.results[0].geometry.lng
   
-  var mymap = L.map('mapid').setView([lat, lon], 5);
+  var mymap = L.map('mapid').setView([lat, lon], 7);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -193,3 +195,4 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 })
 
 }
+
