@@ -1,7 +1,7 @@
  //function dozachstuff (countryCode) = $.ajax(url, countryCode)
-function covidCountry(countryCode){
+function covidCountry(CountryCode){
 var settings = {
-    "url": `https://api.covid19api.com/live/country/${countryCode}`,
+    "url": `https://api.covid19api.com/live/country/${CountryCode}`,
     "method": "GET",
     "timeout": 0,
   };
@@ -19,3 +19,5 @@ $('.submitBtn').on("click",function(e){
 covidCountry();
 
 //new li to append data to flight details
+var covidLi = $("<li>");
+$("#flight-details").append(covidLi);
