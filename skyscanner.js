@@ -64,6 +64,11 @@ $(".submitBtn").on("click", function (e) {
 
       $.ajax(settings).done(function (response) {
         console.log(response);
+
+        // add some styling //
+
+        
+        $('#flight-details').css({"background-color": "#F5F5F5", "font-size": "20px", "padding": "10px"})
         
         // IS FLIGHT INFORMATION AVAILABLE //
         var goNoGo = response.Quotes.length
@@ -88,9 +93,12 @@ $(".submitBtn").on("click", function (e) {
 
           console.log(airlineID, prices, directFlight);
 
+
+         
+          // still working on getting the right airpot //
           var airlineLi = $("<li>");
-          var originAirportLi = $("<li>");
-          var destinationAirportLi = $("<li>");
+          // var originAirportLi = $("<li>");
+          // var destinationAirportLi = $("<li>");
           var priceLi = $("<li>");
           var directFlightLi = $("<li>");
                 
@@ -100,12 +108,14 @@ $(".submitBtn").on("click", function (e) {
 
                     
           $("#flight-details").append(airlineLi);
-          $("#flight-details").append(originAirportLi);
-          $("#flight-details").append(destinationAirportLi);
+          // $("#flight-details").append(originAirportLi);
+          // $("#flight-details").append(destinationAirportLi);
           $("#flight-details").append(priceLi);
           $("#flight-details").append(directFlightLi);
 
           console.log(CountryCode)
+
+        
 
           // if else statments to Display Airline name instead of Number //
           if (airlineID == "1065"){
@@ -171,8 +181,8 @@ $(".submitBtn").on("click", function (e) {
           else (airlineLi.text(`Airline: ${airlineID}`));
 
           // airports //
-          originAirportLi.text(`Departing From: ${originAirport}`)
-          destinationAirportLi.text(`Arriving At: ${destinationAirport}`)
+          // originAirportLi.text(`Departing From: ${originAirport}`)
+          // destinationAirportLi.text(`Arriving At: ${destinationAirport}`)
 
           // price //
           priceLi.text(`Prices: $${prices}`);
