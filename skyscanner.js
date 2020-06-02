@@ -64,16 +64,20 @@ $(".submitBtn").on("click", function (e) {
 
       $.ajax(settings).done(function (response) {
         console.log(response);
+
+        // add some styling //
+
         
-        $('#flight-details').append(`${origin} to ${destination}`);
-       
-      
+        $('#flight-details').css({"background-color": "#F5F5F5", "font-size": "20px", "padding": "10px"})
+        
         // IS FLIGHT INFORMATION AVAILABLE //
         var goNoGo = response.Quotes.length
         if (goNoGo > 0){
-          console.log("flight data")
+          $('#flight-details').append(`${origin} to ${destination}`);
+          
         } else if (goNoGo === 0){
           $('#flight-details').append(`NO FLIGHT DATA AVAILABLE`)
+          covidCountry(CountryCode)
         }
 
         console.log(goNoGo)
@@ -84,33 +88,46 @@ $(".submitBtn").on("click", function (e) {
           var prices = response.Quotes[i].MinPrice;
           var directFlight = response.Quotes[i].Direct;
           var CountryCode = response.Places[0].CountryName;
+          var destinationAirport = response.Places[1].Name;
+          var originAirport = response.Places[0].Name;
+          var outboundlegId = response.Quotes[0].OutboundLeg.DestinationId
+          var numericPlaceId = response.Places[0].PlaceId
 
+          console.log(numericPlaceId)
+          console.log(outboundlegId)
+
+          
+          
           console.log(airlineID, prices, directFlight);
 
+
          
-          
-       
+          // still working on getting the right airpot //
           var airlineLi = $("<li>");
+
+         
+          var originAirportLi = $("<li>");
+          var destinationAirportLi = $("<li>");
           var priceLi = $("<li>");
           var directFlightLi = $("<li>");
-          
-      
-    
-      
+                
       getLonLat(destination)
 
 		  covidCountry(CountryCode)
 
-            // working to display if flight data if not available //
-          
-        
-          
+                    
           $("#flight-details").append(airlineLi);
+          $("#flight-details").append(originAirportLi);
+          $("#flight-details").append(destinationAirportLi);
           $("#flight-details").append(priceLi);
           $("#flight-details").append(directFlightLi);
 
           console.log(CountryCode)
 
+          
+          //  matching placeid with origin //
+
+          
           // if else statments to Display Airline name instead of Number //
           if (airlineID == "1065"){
             airlineLi.text(`Airline: Frontier Air`);
@@ -174,6 +191,18 @@ $(".submitBtn").on("click", function (e) {
           }
           else (airlineLi.text(`Airline: ${airlineID}`));
 
+          // airports //
+
+          if (outboundlegId == numericPlaceId) {
+            originAirportLi.text(`Ariving At: ${originAirport}`)
+          destinationAirportLi.text(`Departing From: ${destinationAirport}`)
+           
+          } else {
+            originAirportLi.text(`Departing From: ${originAirport}`)
+            destinationAirportLi.text(`Arriving At: ${destinationAirport}`)
+          }
+
+          // price //
           priceLi.text(`Prices: $${prices}`);
 
           if (directFlight == "true"){
