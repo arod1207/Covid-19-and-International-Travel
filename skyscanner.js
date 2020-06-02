@@ -4,7 +4,10 @@ var currency = "USD"; // default for simplicity right now
 
 
 // testing //
-
+$("#start-jr").on("click", function(){
+  window.location.reload();
+  console.log("button clicked")
+})
 
 $(".submitBtn").on("click", function (e) {
   e.preventDefault();
