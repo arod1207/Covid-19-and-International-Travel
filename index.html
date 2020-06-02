@@ -9,34 +9,35 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 1 COVID-19 and Traveling</title>
-    <!-- STYLE SHEET REFERENCE - FOUNDATION CSS FRAMEWORK------ -->
+    <!-- STYLE SHEET REFERENCE - FOUNDATION CSS FRAMEWORK--------------------------------------------->
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-
     <link rel="stylesheet" type="text/css" href="foundation.css">
-    <!-- Insert this within your head tag and after foundation.css -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Foundation stylesheet added -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
     <!-- leaflef CSS File -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" Final-Touches-for-HTML
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
 
 </head>
+<!-- END OF HTML HEAD================================================================== -->
 
-<!-- END OF HTML HEAD============================================== -->
-<!-- START OF BODY =========================================== -->
+
+<!-- START OF BODY ==================================================================== -->
+<!-- START OF BREADCRUMBS NAVBAR ====================================================== -->
 
 <body>
     <ul class="breadcrumbs">
         <li><a href="#">Home</a></li>
-        <li><a href="#">FlightTracker</a></li>
+        <li><a href="#">Flight Tracker</a></li>
         <li class="unavailable"><a href="#">Covid19</a></li>
         <li class="current"><a href="#">About Us</a></li>
         <li class="W.H.O."><a href="https://www.who.int/">W.H.O.</a></li>
         <li class="CDC"><a href="https://www.cdc.gov/">CDC</a></li>
         <li class="State.gov"><a href="https://www.state.gov/travelers/">US DOS</a></li>
     </ul>
-
-    <!-- END OF BREADCRUMBS TOP NAV BAR ========= -->
+    <!-- END OF BREADCRUMBS TOP NAV BAR ============================================== -->
     <div class="full-width-testimonial">
         <div class="full-width-testimonial-section">
             <div class="full-width-testimonial-icon text-center">
@@ -58,10 +59,7 @@
             </div>
         </div>
     </div>
-
-
-
-    <!-- END OF TOP SECTION ===================== -->
+    <!-- START OF SIDE CARD ============================================================ -->
     <div class="row" id="content">
         <div class="medium-3 columns">
             <div class="blog-post">
@@ -69,7 +67,6 @@
                 <h4>International Travel</h4> <small>Traveling During a Pandemic</small></h5>
                 <img class="thumbnail"
                     src="https://www.washingtonpost.com/resizer/PE55ZX51Zr7UCLTF0FUU762t0ps=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/OGPUGPZ4QFCOBFEVLDRPDKR434.jpg">
-
                 <p>We all know that the COVID 19 Pandemic impacted us all from every angle of our lives. As humans
                     progressed throughout
                     the decades we became more and more intertwined and less separated by distance. Meaning businesses,
@@ -90,6 +87,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- END OF SIDE CARD LEFT=================================================================== -->
         <br>
         <div class="row" id="content">
             <div class="medium-8 columns">
@@ -98,7 +97,7 @@
                     <div class="row" id="content">
                         <div class="medium-12 columns">
                             <div class="blog-post">
-
+                                <!-- START OF FORM REQUIRED FOR BOTH APIS============================= -->
                                 <form>
                                     <h3> API Flight Tracker</h3>
                                     <p>As a traveler we know that safety is very important. With COVID 19 Travel
@@ -106,7 +105,6 @@
                                         please
                                         fill out the form below.
                                     </p>
-
                             </div>
                             <div class="row">
                                 <div class="large-8 columns">
@@ -122,105 +120,104 @@
                                 <input type="text" placeholder="Destination" id="destination">
                                 <label for="departureDate">Depart:</label>
                                 <input type="date" id="depart" name="depart">
-
                                 <label for="return">Return:</label>
                                 <input type="date" id="return" name="return">
                                 <!-- SUBMIT BUTTON ==================== -->
                                 <a href="#" class="button postfix submitBtn" id="submitBtn">Submit</a>
                                 <div class="row collapse postfix-round">
                                 </div>
-
                             </div>
                         </div>
                         <div class="blog-post">
-
+                            <!-- UL CLASS TO SHOW RESULTS FROM APIS================================================================== -->
                             <form>
-
-
                                 <h5> Results:</h5>
-                                <h3 class="type-sidelines double"><span>Flights</span></h3>
+                                <h3 class="type-sidelines double"><span>Flights and Cases</span></h3>
+<<<<<<< Updated upstream
 
-                                <ul id="flight-details"></ul>
+                                <ul id="flight-details" style="list-style: none"></ul>
 
+=======
+                                <ul id="flight-details" style="list-style: none"></ul>
+>>>>>>> Stashed changes
                                 <p></p>
-
                         </div>
-
-
                         </form>
-
-
                         <br>
-                        <!-- <div class="row" id="content">
-            <div class="medium-8 columns">
-                <div class="blog-post">
-                    <h3>I'll Take A Corona, Hold the Corona.</h3>
-        
-                    <p>As a traveler we know that safety is very important. During these extraordinary times we have a
-                        created a <br>
-                        website to track COVID 19 and make a informed travel decision based on current COVID 19
-                        statistics
-                    </p>
-        
-                    <p>To get started... All you need to do is search for a city below.</p>
-                    <div class="callout">
-                        <ul class="menu">
-                            <ul><a href="cdc.gov">CDC</a>Center for Disease Control</ul>
-                            <br>
-                            <ul><a
-                                    href="https://health.gov.il/English/MinistryUnits/HealthDivision/Icdc/Pages/default.aspx">ICDC</a>Israel
-                                Center for Disease Control</ul>
-                            Center for Disease Control
-                        </ul>
-                        <br>
-                        <ul><a
-                                href="https://health.gov.il/English/MinistryUnits/HealthDivision/Icdc/Pages/default.aspx">NIID</a><br />Japanese
-                            National Institue of Infectious Diseases</ul>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div> -->
-
-
-                        </form>
-
                         <div id="mapid"></div>
                     </div>
-
+                    <!-- END OF UL CLASS TO DISPLAY RESULTS FROM APIs ==================================== -->
                 </div>
-
             </div>
             <br>
             <br>
             <br>
-
-
+            <!-- TABLE FOR GLOBAL AGENCIES ================================================= -->
             <div class="row" id="content">
                 <div class="medium-12 columns">
                     <div class="blog-post">
-                        <h3> Results Below For COVID-19 API <small>06/02/2020</small></h3>
-                        <!-- UL FOR FLIGHT DETAILS ===================================== -->
-                        <ul><a href="cdc.gov">CDC</a>Center for Disease Control</ul>
-                        <ul><a
-                                href="https://health.gov.il/English/MinistryUnits/HealthDivision/Icdc/Pages/default.aspx">ICDC</a>Israel
-                            Center for Disease Control</ul>
-                        </ul>
-
-                        <ul><a
-                                href="https://health.gov.il/English/MinistryUnits/HealthDivision/Icdc/Pages/default.aspx">
-                                NIID</a>
-                            Japanese
-                            National Institue of Infectious Diseases</ul>
-                        </ul>
-                        </ul>
+                        <h3>Global Agencies</h3>
                     </div>
                 </div>
             </div>
+            <table class="table-expand">
+                <thead>
+                    <tr class="table-expand-row">
+                        <th width="400">U.S.A</th>
+                        <th>CDC</th>
+                        <th class="text-right" width=""></th>
+                        <th width="150"><a href="cdc.gov">CDC</a></th>
+                    </tr>
+                </thead>
+                <thead>
+                    <tr class="table-expand-row">
+                        <th width="400">Japan</th>
+                        <th>Japanese
+                            National Institute of Infectious Diseases</th>
+                        <th class="text-right" width=""></th>
+                        <th width="150"><a
+                                href="https://health.gov.il/English/MinistryUnits/HealthDivision/Icdc/Pages/default.aspx">JNIOID</a>
+                        </th>
+                    </tr>
+                </thead>
+                <thead>
+                    <tr class="table-expand-row">
+                        <th width="400">Israel</th>
+                        <th>Isreal Center for Disease Control</th>
+                        <th class="text-right" width=""></th>
+                        <th width="150"><a
+                                href="https://health.gov.il/English/MinistryUnits/HealthDivision/Icdc/Pages/default.aspx">ICDC</a>
+                        </th>
+                    </tr>
+                </thead>
+                <thead>
+                    <tr class="table-expand-row">
+                        <th width="400">Europe</th>
+                        <th>European Centre for Disease Prevention and Control</th>
+                        <th class="text-right" width=""></th>
+                        <th width="150"><a href="https://www.ecdc.europa.eu/en">ECDPC</a></th>
+                    </tr>
+                </thead>
+                <thead>
+                    <tr class="table-expand-row">
+                        <th width="400">Africa Union</th>
+                        <th>Africa CDC </th>
+                        <th class="text-right" width=""></th>
+                        <th width="150"><a href="https://africacdc.org/">Africa CDC</a></th>
+                    </tr>
+                </thead>
+                <thead>
+                    <tr class="table-expand-row">
+                        <th width="400">Chile</th>
+                        <th>Chile CDC</th>
+                        <th class="text-right" width=""></th>
+                        <th width="150"><a href="https://www.covidchile.com/">Chile CDC</a></th>
+                    </tr>
+                </thead>
+                </tbody>
+            </table>
 
-
+            <!-- END OF TABLE FOR GLOBAL AGENCIES ======================================================= -->
             <br>
             <br>
             <div class="row" id="content">
@@ -246,19 +243,13 @@
                             Pick up food at drive-throughs, curbside restaurant service, or stores.
                             Make sure you are up to date with your routine vaccinations, including measles-mumps-rubella
                             (MMR) vaccine and the
-                            seasonal flu vaccine. - CDC (https://www.cdc.gov/coronavirus/2019-ncov/travelers/faqs.html)
+                            seasonal flu vaccine. - <a href="cdc.gov">CDC</a>
                         </p>
-
                     </div>
                 </div>
             </div>
-
             <br>
             <br>
-
-
-            <!-- END OF COVID 19 API ======================================================================== -->
-
             <div class="row" id="content">
                 <div class="medium-12 columns">
                     <div class="blog-post">
@@ -277,19 +268,12 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
 
-
-
-
 </body>
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-crossorigin=""></script>
-
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" Final-Touches-for-HTML
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
 <!-- SCRIPT SRCS FOR JAVASCRIPT ================================= -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="skyscanner.js"></script>
@@ -297,19 +281,3 @@ crossorigin=""></script>
 
 
 </html>
-
-
-
-<!-- Eddie Personal Notes and Scribble Area Below -->
-
-<!-- Below is supposed to enter in background of a card to replace with image? -->
-<!-- 
-<div data-interchange="[https://www.tokkoro.com/picsup/2639580-rio-de-janeiro-4k-hd-latest-wallpaper.jpg, small], [https://www.tokkoro.com/picsup/2639580-rio-de-janeiro-4k-hd-latest-wallpaper.jpg, medium], 
-                    [https://www.tokkoro.com/picsup/2639580-rio-de-janeiro-4k-hd-latest-wallpaper.jpg, large]">
-</div> -->
-
-
-<!-- Going to figure out if I can change the background images to different INTERNATIONAL CITIES -->
-<!-- https://free4kwallpapers.com/uploads/originals/2018/06/27/london-city--wallpaper.jpg -->
-<!-- https://www.tokkoro.com/picsup/2639580-rio-de-janeiro-4k-hd-latest-wallpaper.jpg -->
-<!-- https://wallpapersdsc.net/wp-content/uploads/2016/09/Tokyo-Widescreen.jpg -->

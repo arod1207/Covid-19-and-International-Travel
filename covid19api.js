@@ -23,6 +23,3 @@ $('.submitBtn').on("click",function(e){
 }; 
 //call function
 covidCountry(" ");
-
-
-covidCountry()
