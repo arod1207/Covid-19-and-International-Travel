@@ -1,6 +1,6 @@
 /* Start of CSS File - Eguillen */
 
-#footer{
+/* #footer{
     height: 25px;
     position: fixed;
     bottom: 0px;
@@ -9,6 +9,11 @@
     color: rgb(14, 11, 216);
     text-align: center;
     width: 100%;
-}
+} */
 
 #mapid { height: 180px; }
+
+#flight-details {
+    border-radius: 25px;
+    text-transform: capitalize;
+}

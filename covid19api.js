@@ -21,9 +21,5 @@ $('.submitBtn').on("click",function(e){
 })
 
 }; 
-covidCountry("chile");
-
-
-
-covidCountry()
-
+//call function
+covidCountry(" ");
