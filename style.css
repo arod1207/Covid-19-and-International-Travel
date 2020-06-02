@@ -15,4 +15,5 @@
 
 #flight-details {
     border-radius: 25px;
+    text-transform: capitalize;
 }
