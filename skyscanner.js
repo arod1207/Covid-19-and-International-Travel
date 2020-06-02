@@ -81,7 +81,7 @@ $(".submitBtn").on("click", function (e) {
         // IS FLIGHT INFORMATION AVAILABLE //
         var goNoGo = response.Quotes.length
         if (goNoGo > 0){
-          $('#flight-details').append(`${origin} to ${destination}`);
+          $('#flight-details').html(`<h3><b>${origin} to ${destination}</b></h3>`);
           
         } else if (goNoGo === 0){
           $('#flight-details').append(`NO FLIGHT DATA AVAILABLE`)
