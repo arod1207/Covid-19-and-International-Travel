@@ -2,10 +2,15 @@ var country = "US"; // default for simplicity right now
 var locale = "en-US"; // default for simplicity right now
 var currency = "USD"; // default for simplicity right now
 
+
+// testing //
+
+
 $(".submitBtn").on("click", function (e) {
   e.preventDefault();
 
   $('#flight-details').text(" ");
+
 
  
 
@@ -228,7 +233,8 @@ $.ajax(
   var lon = response.results[0].geometry.lng
   
   var mymap = L.map('mapid').setView([lat, lon], 7);
-
+ 
+  
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -238,6 +244,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'pk.eyJ1IjoiYXJvZDEyMDciLCJhIjoiY2thdnB0ZzAxMWlkOTJ4cGN5NDJxeWtqcSJ9.sQsygMwVtngG59Cz3GYbuA'
 }).addTo(mymap);
 })
-
+$("#searchForm")[0].reset();
 }
 
