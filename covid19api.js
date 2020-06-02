@@ -5,7 +5,7 @@ var settings = {
     "method": "GET",
     "timeout": 0,
   };
-  
+  //ajax call to log response #130 as each country varies on data update frequency
   $.ajax(settings).done(function (response) {
     var cases = response[130].Cases
     console.log(cases);
