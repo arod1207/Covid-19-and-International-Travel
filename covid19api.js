@@ -21,5 +21,5 @@ $('.submitBtn').on("click",function(e){
 })
 
 }; 
-//call function
+//call function with empty argument just to check response
 covidCountry(" ");
