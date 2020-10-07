@@ -5,7 +5,7 @@
 
 ## Link to the Live Website
 To access the application, please click on the link below. 
-https://arod1207.github.io/Project1/
+https://arod1207.github.io/Covid-19-and-International-Travel/
 
 
 ## Developers
